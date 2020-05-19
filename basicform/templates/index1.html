@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>insert record</title>
+  </head>
+  <body>
+    <h1>Create a new record into MYSQL</h1>
+    <h2>Employee form</h2>
+    <hr>
+    <form  method="POST">
+      {% csrf_token %}
+
+    Employee name:<input type="text" name="empname" placeholder="Enter employee name" required><br>
+    Email:<input type="text" name="email" placeholder="Enter email id" required><br>
+    country:<input type="text" name="country" placeholder="Enter country name" required><br>
+    <input type="submit"  value="Insert record">
+    {% if messages %}
+    {% for message in messages %}
+    <h2 style="color:green;">{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    </form>
+    <hr>
+  </body>
+</html>
